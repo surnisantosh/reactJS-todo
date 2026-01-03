@@ -1,0 +1,390 @@
+/* =======================
+   Global and Body Styles
+======================= */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Animated Background Keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Light Mode Containers */
+.main-body, .auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #222;
+}
+
+/* =======================
+   Dark Mode (with colors!)
+======================= */
+.dark-mode {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientBGDark 15s ease infinite;
+  color: #f1f1f1;
+}
+
+@keyframes gradientBGDark {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =======================
+   Authentication Styles
+======================= */
+.auth-card-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .auth-card {
+  background: rgba(20, 20, 20, 0.85);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.auth-card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.auth-card h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.dark-mode .auth-card h2 {
+  background: linear-gradient(90deg, #00ffcc, #ff00cc, #00c6ff, #ff6b6b, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.auth-card input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0,123,255,0.5);
+}
+
+.dark-mode .auth-card input {
+  background-color: #2a2a2a;
+  border-color: #666;
+  color: #f1f1f1;
+}
+.dark-mode .auth-card input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 8px rgba(0,198,255,0.7);
+}
+
+/* Toggle Password */
+.password-container {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.auth-card button:not(.dark-toggle-btn) {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2575fc, #6a11cb, #ff6a00);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.auth-card button:not(.dark-toggle-btn):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+.dark-mode .auth-card button:not(.dark-toggle-btn) {
+  background: linear-gradient(135deg, #00c6ff, #ff00cc, #00ffcc, #ff6b6b);
+}
+.dark-mode .auth-card button:not(.dark-toggle-btn):hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Links */
+.auth-card p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+.dark-mode .auth-card p {
+  color: #ccc;
+}
+.auth-card a {
+  color: #2575fc;
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   Todo Container
+======================= */
+.todo-list-mainDiv {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .todo-list-mainDiv {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff512f, #dd2476, #24c6dc, #514a9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+.dark-mode .todo-heading {
+  background: linear-gradient(90deg, #ff00cc, #00c6ff, #00ffcc, #ffd700, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark/Light Toggle */
+.dark-toggle-btn {
+  background: transparent;
+  border: 2px solid #007bff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.dark-toggle-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+.dark-mode .dark-toggle-btn {
+  border: 2px solid #00c6ff;
+}
+.dark-mode .dark-toggle-btn:hover {
+  background: #00c6ff;
+  color: #121212;
+}
+
+/* Inputs + Add Btn */
+.todo-task-input-div {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.form-control {
+  flex: 1;
+  border-radius: 12px;
+  border: 2px solid #007bff;
+  transition: 0.3s ease;
+}
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0,123,255,0.5);
+}
+#add-button {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+  background: linear-gradient(135deg, #ff6a00, #2575fc, #6a11cb);
+  color: #fff;
+  border: none;
+}
+#add-button:hover {
+  transform: rotate(90deg);
+  background: linear-gradient(135deg, #6a11cb, #ff6a00, #2575fc);
+}
+.dark-mode #add-button {
+  background: linear-gradient(135deg, #00c6ff, #ff00cc, #ff6b6b);
+}
+.dark-mode #add-button:hover {
+  background: linear-gradient(135deg, #ff6b6b, #00ffcc, #00c6ff);
+}
+
+/* Logout */
+.logout-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e74c3c;
+  color: #fff;
+  transition: 0.3s ease;
+}
+.logout-btn:hover {
+  background: #c0392b;
+}
+.dark-mode .logout-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff00cc);
+}
+.dark-mode .logout-btn:hover {
+  background: linear-gradient(135deg, #ff00cc, #00c6ff);
+}
+
+/* =======================
+   Tasks
+======================= */
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.task-item:hover {
+  background: #e9ecef;
+  transform: scale(1.02);
+}
+.dark-mode .task-item {
+  background: #2a2a2a;
+}
+.dark-mode .task-item:hover {
+  background: linear-gradient(90deg, #2a2a2a, #333, #444);
+}
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  word-break: break-word;
+}
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+.dark-mode .task-item.completed .task-text {
+  color: #888;
+}
+
+/* Task Action Buttons */
+.task-actions button {
+  border-radius: 50%;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.task-actions button:hover {
+  transform: scale(1.1);
+}
+
+/* Task Info Layout */
+.task-info {
+  display: flex;
+  align-items: center;
+}
+.task-name {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+/* Theme toggle button (small rounded rectangle) */
+.theme-toggle-btn {
+  background: #6a11cb;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.theme-toggle-btn:hover {
+  background: #2575fc;
+  transform: scale(1.05);
+}
+
+/* Bottom toggle button */
+.bottom-toggle {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
